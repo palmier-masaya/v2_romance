@@ -138,8 +138,8 @@
 
         .character {
             position: absolute;
-            bottom: 0;
-            max-height: 60%;
+            bottom: 180px; /* テキストウィンドウの高さ分上げる */
+            max-height: 50%;
             max-width: 35%;
             opacity: 0;
             transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -149,21 +149,28 @@
 
         .character.left {
             left: 15%;
-            transform: translateX(-50%) translateY(10px);
+            transform: translateX(-50%) translateY(20px);
         }
 
         .character.center {
             left: 50%;
-            transform: translateX(-50%) translateY(10px);
+            transform: translateX(-50%) translateY(20px);
         }
 
         .character.right {
             right: 15%;
-            transform: translateX(50%) translateY(10px);
+            transform: translateX(50%) translateY(20px);
         }
 
         .character.visible {
             opacity: 1;
+        }
+
+        .character.left.visible {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .character.center.visible {
             transform: translateX(-50%) translateY(0);
         }
 
@@ -410,7 +417,8 @@
 
             .character {
                 max-width: 45%;
-                max-height: 55%;
+                max-height: 45%;
+                bottom: 150px; /* モバイルでもテキストウィンドウと被らないよう調整 */
             }
 
             #controls {
