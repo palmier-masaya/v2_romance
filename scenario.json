@@ -1,0 +1,68 @@
+{
+  "scenes": [
+    {
+      "speaker": "ナレーター",
+      "text": "桜が舞い散る春の日、あなたは学校の屋上で一人の少女と出会った。",
+      "character": "girl_normal.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "spring_theme.mp3"
+    },
+    {
+      "speaker": "桜子",
+      "text": "あら、こんなところに誰かいるなんて思わなかった。",
+      "character": "girl_surprised.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "spring_theme.mp3"
+    },
+    {
+      "speaker": "桜子",
+      "text": "私は桜子。あなたは？",
+      "character": "girl_smile.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "spring_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "あなたは自分の名前を名乗った。",
+      "character": "girl_normal.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "spring_theme.mp3"
+    },
+    {
+      "speaker": "桜子",
+      "text": "素敵な名前ね。ここは私の特別な場所なの。",
+      "character": "girl_happy.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "spring_theme.mp3"
+    },
+    {
+      "speaker": "桜子",
+      "text": "でも、あなたとなら一緒にいても良いかも。",
+      "character": "girl_shy.png",
+      "position": "center",
+      "background": "school_rooftop.jpg",
+      "bgm": "romantic_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "夕日が二人を優しく照らしていた。",
+      "character": "girl_smile.png",
+      "position": "center",
+      "background": "sunset_rooftop.jpg",
+      "bgm": "romantic_theme.mp3"
+    },
+    {
+      "speaker": "桜子",
+      "text": "また明日も、ここで会いましょう。",
+      "character": "girl_happy.png",
+      "position": "center",
+      "background": "sunset_rooftop.jpg",
+      "bgm": "romantic_theme.mp3"
+    }
+  ]
+}
