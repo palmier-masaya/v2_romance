@@ -513,21 +513,29 @@
                 this.scenarios = [];
                 this.currentBGM = null;
                 this.titleBGM = null;
-                this.bgmPlayer = document.getElementById('bgm-player');
-                this.titleBGMPlayer = document.getElementById('title-bgm');
+                this.isMuted = false;
+                this.isTyping = false;
+                this.typingSpeed = 50;
+                this.currentText = '';
+                this.typingIndex = 0;
+                this.typingTimer = null;
+                this.isTransitioning = false; // シーン遷移中フラグ
+
+                // DOM要素の取得
+                this.loadingScreen = document.getElementById('loading-screen');
                 this.gameContainer = document.getElementById('game-container');
                 this.characterImg = document.getElementById('character');
                 this.speakerName = document.getElementById('speaker-name');
                 this.dialogueText = document.getElementById('dialogue-text');
                 this.clickIndicator = document.getElementById('click-indicator');
                 this.volumeSlider = document.getElementById('volume-slider');
-                this.isMuted = false;
-                this.isTyping = false;
-                this.typingSpeed = 50; // ミリ秒
-                this.currentText = '';
-                this.typingIndex = 0;
-                this.typingTimer = null;
                 
+                // Audio Playerの取得
+                this.bgmPlayer = document.getElementById('bgm-player');
+                this.titleBGMPlayer = document.getElementById('title-bgm');
+                this.clickSEPlayer = document.getElementById('click-se-player');
+                this.sceneSEPlayer = document.getElementById('scene-se-player');
+
                 this.initializeGame();
             }
 
@@ -537,17 +545,60 @@
                     const data = await response.json();
                     this.scenarios = data.scenes;
                     this.titleBGM = data.titleBGM;
-                    
+                    this.clickSE = 'assets/audio/se/click.mp3'; // クリックSEのパス
+
+                    await this.preloadAssets(); // ★★★ 全素材のプリロード
+
                     this.setupEventListeners();
                     this.setupAudio();
                     this.setupStartScreen();
-                    this.createParticles();
-                    
-                    document.getElementById('loading-screen').classList.add('hidden');
+                    this.createParticles(document.body, 20); // 背景パーティクル
+
+                    this.loadingScreen.classList.add('hidden');
                 } catch (error) {
-                    console.error('シナリオの読み込みに失敗しました:', error);
-                    this.showError('シナリオファイルが見つかりません。assets/scenario.json を確認してください。');
+                    console.error('初期化エラー:', error);
+                    this.showError('ゲームファイルの読み込みに失敗しました。<br>assets/scenario.json を確認してください。');
                 }
+            }
+
+            // ★★★ 機能追加: アセットのプリロード
+            async preloadAssets() {
+                const loadingText = this.loadingScreen.querySelector('div');
+                const assetPromises = [];
+                const assetsToLoad = new Set();
+
+                // 読み込むべきアセットを収集
+                assetsToLoad.add(`assets/audio/bgm/${this.titleBGM}`);
+                assetsToLoad.add(this.clickSE);
+
+                this.scenarios.forEach(scene => {
+                    if (scene.background) assetsToLoad.add(`assets/images/backgrounds/${scene.background}`);
+                    if (scene.character) assetsToLoad.add(`assets/images/characters/${scene.character}`);
+                    if (scene.bgm) assetsToLoad.add(`assets/audio/bgm/${scene.bgm}`);
+                    if (scene.se) assetsToLoad.add(`assets/audio/se/${scene.se}`);
+                });
+
+                const totalAssets = assetsToLoad.size;
+                let loadedCount = 0;
+
+                // Promiseを作成してプリロードを実行
+                assetsToLoad.forEach(src => {
+                    const promise = new Promise((resolve, reject) => {
+                        const isAudio = src.includes('/audio/');
+                        const element = isAudio ? new Audio() : new Image();
+                        
+                        element.onload = element.oncanplaythrough = () => {
+                            loadedCount++;
+                            loadingText.innerHTML = `読み込み中... ${loadedCount} / ${totalAssets}<div class="loading-spinner"></div>`;
+                            resolve();
+                        };
+                        element.onerror = reject;
+                        element.src = src;
+                    });
+                    assetPromises.push(promise);
+                });
+                
+                return Promise.all(assetPromises);
             }
 
             setupStartScreen() {
@@ -556,128 +607,166 @@
                 
                 if (this.titleBGM) {
                     this.titleBGMPlayer.src = `assets/audio/bgm/${this.titleBGM}`;
-                    this.titleBGMPlayer.volume = 0.5;
                     this.titleBGMPlayer.load();
                 }
             }
-
+            
+            // ★★★ 機能追加: クリックSEとクリックパーティクル
             setupEventListeners() {
-                // クリックで次のシーンへ
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('#controls') && !e.target.closest('#start-screen')) {
+                // クリック/タップで次のシーンへ
+                const handleInteraction = (e) => {
+                    if (!e.target.closest('#controls') && !e.target.closest('#start-screen') && this.gameContainer.classList.contains('visible')) {
+                        if (this.isTransitioning) return; // 遷移中は無効
+
                         if (this.isTyping) {
                             this.completeTyping();
                         } else {
+                            this.playClickSE(); // クリックSE再生
                             this.nextScene();
                         }
                     }
-                });
+                };
 
-                // キーボードでの操作
+                document.addEventListener('click', handleInteraction);
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        if (this.isTyping) {
-                            this.completeTyping();
-                        } else {
-                            this.nextScene();
-                        }
+                        handleInteraction(e);
                     }
                 });
+
+                // ★★★ クリック/タップ時のパーティクル表示
+                const showClickParticle = (e) => {
+                    const x = e.clientX || (e.touches && e.touches[0].clientX);
+                    const y = e.clientY || (e.touches && e.touches[0].clientY);
+
+                    const particle = document.createElement('div');
+                    particle.className = 'click-particle';
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 600);
+                };
+
+                document.addEventListener('mousedown', showClickParticle);
+                document.addEventListener('touchstart', showClickParticle);
 
                 // 音量調整
-                this.volumeSlider.addEventListener('input', (e) => {
-                    this.bgmPlayer.volume = e.target.value;
-                    this.titleBGMPlayer.volume = e.target.value;
-                });
+                this.volumeSlider.addEventListener('input', (e) => this.setVolume(e.target.value));
             }
-
+            
             setupAudio() {
-                this.bgmPlayer.volume = 0.5;
-                this.titleBGMPlayer.volume = 0.5;
+                this.clickSEPlayer.src = this.clickSE;
+                this.clickSEPlayer.load();
+                this.setVolume(0.5);
                 
-                this.bgmPlayer.addEventListener('canplaythrough', () => {
-                    if (!this.isMuted) {
-                        this.bgmPlayer.play().catch(e => console.log('BGM再生エラー:', e));
-                    }
-                });
-
-                this.titleBGMPlayer.addEventListener('canplaythrough', () => {
-                    if (!this.isMuted) {
-                        this.titleBGMPlayer.play().catch(e => console.log('タイトルBGM再生エラー:', e));
-                    }
-                });
+                const playOnCanPlay = (player) => {
+                    player.addEventListener('canplaythrough', () => {
+                         if (!this.isMuted && player.paused && (player === this.titleBGMPlayer || player.src === this.currentBGM)) {
+                             player.play().catch(e => {});
+                         }
+                    });
+                };
+                playOnCanPlay(this.bgmPlayer);
+                playOnCanPlay(this.titleBGMPlayer);
             }
 
-            createParticles() {
-                const particleCount = 20;
-                for (let i = 0; i < particleCount; i++) {
-                    setTimeout(() => {
-                        this.createParticle();
-                    }, i * 300);
+            // パーティクル生成ロジックを汎用化
+            createParticles(container, count) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => this.createParticle(container), i * 300);
                 }
             }
 
-            createParticle() {
+            createParticle(container) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                const duration = (Math.random() * 3 + 3);
+                particle.style.animationDuration = duration + 's';
                 particle.style.animationDelay = Math.random() * 2 + 's';
-                
-                document.body.appendChild(particle);
-                
+                container.appendChild(particle);
+
                 setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
+                    particle.remove();
+                    if (container === document.body) { // 背景パーティクルはループさせる
+                       this.createParticle(container);
                     }
-                    this.createParticle();
-                }, 6000);
+                }, duration * 1000);
             }
 
             startGame() {
                 document.getElementById('start-screen').classList.add('hidden');
                 this.gameContainer.classList.add('visible');
                 
-                // タイトルBGMを停止
                 this.titleBGMPlayer.pause();
-                
-                // ゲーム開始
                 this.loadScene(0);
             }
 
-            loadScene(sceneIndex) {
+            // ★★★ 機能追加: フェード演出とシーンSE
+            async loadScene(sceneIndex) {
                 if (sceneIndex >= this.scenarios.length) {
                     this.showEnding();
                     return;
                 }
-
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
+                
                 const scene = this.scenarios[sceneIndex];
                 this.currentScene = sceneIndex;
 
-                // 背景の変更
-                if (scene.background) {
-                    this.gameContainer.style.backgroundImage = `url('assets/images/backgrounds/${scene.background}')`;
+                // 既存の要素をフェードアウト
+                this.characterImg.classList.add('fade-out');
+                
+                // 背景のフェードアウト（背景が変わる場合のみ）
+                const newBg = `url("assets/images/backgrounds/${scene.background}")`;
+                if (this.gameContainer.style.backgroundImage !== newBg) {
+                    this.gameContainer.classList.add('fade-out');
                 }
 
-                // キャラクターの変更
+                await new Promise(resolve => setTimeout(resolve, 600)); // フェードアウト待機
+
+                // 背景の更新
+                if (this.gameContainer.style.backgroundImage !== newBg) {
+                    this.gameContainer.style.backgroundImage = newBg;
+                    this.gameContainer.classList.remove('fade-out');
+                }
+
+                // キャラクターの更新
                 if (scene.character) {
                     this.characterImg.src = `assets/images/characters/${scene.character}`;
-                    this.characterImg.className = `character ${scene.position || 'center'} visible`;
+                    this.characterImg.className = `character ${scene.position || 'center'}`; // 一旦非表示に
+                    setTimeout(() => {
+                        this.characterImg.classList.add('visible');
+                        this.characterImg.classList.remove('fade-out'); // フェードイン
+                    }, 50);
                 } else {
+                    this.characterImg.src = '';
                     this.characterImg.className = 'character';
                 }
 
-                // BGMの変更
+                // BGMの更新
                 if (scene.bgm && scene.bgm !== this.currentBGM) {
-                    this.currentBGM = scene.bgm;
-                    this.bgmPlayer.src = `assets/audio/bgm/${scene.bgm}`;
+                    this.currentBGM = `assets/audio/bgm/${scene.bgm}`;
+                    this.bgmPlayer.src = this.currentBGM;
                     this.bgmPlayer.load();
                 }
 
-                // テキストの表示
+                // ★★★ シーンSEの再生
+                if (scene.se) {
+                    this.sceneSEPlayer.src = `assets/audio/se/${scene.se}`;
+                    this.sceneSEPlayer.play();
+                }
+
+                // テキスト表示
                 this.speakerName.textContent = scene.speaker || '';
                 this.startTyping(scene.text || '');
+
+                await new Promise(resolve => setTimeout(resolve, 200)); // 遷移完了までの少しの待ち
+                this.isTransitioning = false;
             }
 
             startTyping(text) {
@@ -686,19 +775,15 @@
                 this.isTyping = true;
                 this.clickIndicator.classList.remove('visible');
                 this.dialogueText.innerHTML = '<span class="typing-cursor"></span>';
-                
                 this.typeNextCharacter();
             }
 
             typeNextCharacter() {
                 if (this.typingIndex < this.currentText.length) {
-                    const char = this.currentText[this.typingIndex];
-                    this.dialogueText.innerHTML = this.currentText.substring(0, this.typingIndex + 1) + '<span class="typing-cursor"></span>';
+                    const currentDisplay = this.currentText.substring(0, this.typingIndex + 1);
+                    this.dialogueText.innerHTML = currentDisplay + '<span class="typing-cursor"></span>';
                     this.typingIndex++;
-                    
-                    this.typingTimer = setTimeout(() => {
-                        this.typeNextCharacter();
-                    }, this.typingSpeed);
+                    this.typingTimer = setTimeout(() => this.typeNextCharacter(), this.typingSpeed);
                 } else {
                     this.completeTyping();
                 }
@@ -709,61 +794,73 @@
                     clearTimeout(this.typingTimer);
                     this.typingTimer = null;
                 }
-                
                 this.isTyping = false;
                 this.dialogueText.textContent = this.currentText;
                 this.clickIndicator.classList.add('visible');
             }
 
             nextScene() {
-                if (!this.isTyping) {
+                if (!this.isTyping && !this.isTransitioning) {
                     this.loadScene(this.currentScene + 1);
                 }
+            }
+            
+            playClickSE() {
+                this.clickSEPlayer.currentTime = 0;
+                this.clickSEPlayer.play();
+            }
+
+            setVolume(volume) {
+                this.bgmPlayer.volume = volume;
+                this.titleBGMPlayer.volume = volume;
+                this.clickSEPlayer.volume = volume;
+                this.sceneSEPlayer.volume = volume;
+                this.volumeSlider.value = volume;
             }
 
             showEnding() {
                 this.dialogueText.innerHTML = '<div class="ending-text">おしまい</div>';
                 this.speakerName.textContent = '';
                 this.clickIndicator.style.display = 'none';
+                this.characterImg.classList.add('fade-out');
             }
 
             showError(message) {
-                document.getElementById('loading-screen').innerHTML = `
-                    <div style="text-align: center;">
-                        <div style="color: #ff6b6b; margin-bottom: 20px;">エラー</div>
+                this.loadingScreen.classList.remove('hidden');
+                this.loadingScreen.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="color: #ff6b6b; margin-bottom: 20px; font-weight: bold;">エラーが発生しました</div>
                         <div style="font-size: 16px;">${message}</div>
-                    </div>
-                `;
+                    </div>`;
             }
 
             toggleMute() {
                 this.isMuted = !this.isMuted;
+                const muteButton = document.querySelector('#controls button');
                 if (this.isMuted) {
                     this.bgmPlayer.pause();
                     this.titleBGMPlayer.pause();
-                    document.querySelector('#controls button').textContent = '🔇';
+                    muteButton.textContent = '🔇';
                 } else {
-                    this.bgmPlayer.play().catch(e => console.log('BGM再生エラー:', e));
-                    this.titleBGMPlayer.play().catch(e => console.log('タイトルBGM再生エラー:', e));
-                    document.querySelector('#controls button').textContent = '🔊';
+                    if (this.gameContainer.classList.contains('visible')) {
+                        if (this.bgmPlayer.src) this.bgmPlayer.play().catch(e => {});
+                    } else {
+                         if (this.titleBGMPlayer.src) this.titleBGMPlayer.play().catch(e => {});
+                    }
+                    muteButton.textContent = '🔊';
                 }
             }
         }
 
-        // グローバル関数
+        // グローバル関数（変更なし）
         function startGame() {
-            if (window.game) {
-                window.game.startGame();
-            }
+            if (window.game) window.game.startGame();
         }
-
         function toggleMute() {
-            if (window.game) {
-                window.game.toggleMute();
-            }
+            if (window.game) window.game.toggleMute();
         }
 
-        // ゲーム開始
+        // ゲーム開始（変更なし）
         window.addEventListener('load', () => {
             window.game = new VisualNovelGame();
         });
