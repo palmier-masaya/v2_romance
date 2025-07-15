@@ -562,16 +562,48 @@
             }
 
             setupEventListeners() {
-                // クリックで次のシーンへ
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('#controls') && !e.target.closest('#start-screen')) {
+                // ★★★ 機能追加: クリックSEとクリックパーティクル
+            setupEventListeners() {
+                // クリック/タップで次のシーンへ
+                const handleInteraction = (e) => {
+                    if (!e.target.closest('#controls') && !e.target.closest('#start-screen') && this.gameContainer.classList.contains('visible')) {
+                        if (this.isTransitioning) return; // 遷移中は無効
+
                         if (this.isTyping) {
                             this.completeTyping();
                         } else {
+                            this.playClickSE(); // クリックSE再生
                             this.nextScene();
                         }
                     }
+                };
+
+                document.addEventListener('click', handleInteraction);
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleInteraction(e);
+                    }
                 });
+
+                // ★★★ クリック/タップ時のパーティクル表示
+                const showClickParticle = (e) => {
+                    const x = e.clientX || (e.touches && e.touches[0].clientX);
+                    const y = e.clientY || (e.touches && e.touches[0].clientY);
+
+                    const particle = document.createElement('div');
+                    particle.className = 'click-particle';
+                    particle.style.left = `${x}px`;
+                    particle.style.top = `${y}px`;
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 600);
+                };
+
+                document.addEventListener('mousedown', showClickParticle);
+                document.addEventListener('touchstart', showClickParticle);
 
                 // キーボードでの操作
                 document.addEventListener('keydown', (e) => {
