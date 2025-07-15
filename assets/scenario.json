@@ -6,7 +6,7 @@
       "text": "早朝、あなたは放送室へ向かった。",
       "character": "",
       "position": "",
-      "background": "school_corridor_morning.jpg",
+      "background": "school_day.jpg",
       "bgm": "school_morning_theme.mp3"
     },
     {
@@ -14,7 +14,7 @@
       "text": "よし、学校着いた〜。放送室に行って自習でもしようかな？",
       "character": "",
       "position": "",
-      "background": "school_corridor_morning.jpg",
+      "background": "school_day.jpg",
       "bgm": "school_morning_theme.mp3"
     },
     {
@@ -30,7 +30,7 @@
       "text": "ガチャ......失礼しまーす......って、あれ？ サク先輩？",
       "character": "saku_sleepy.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "curiosity_theme.mp3"
     },
     {
@@ -38,7 +38,7 @@
       "text": "ん......おはよう",
       "character": "saku_sleepy.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "curiosity_theme.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "おはようございます。先輩も勉強ですか？",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "calm_theme.mp3"
     },
     {
@@ -54,7 +54,7 @@
       "text": "そう......だね。そんなところかな",
       "character": "saku_vague_smile.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "calm_theme.mp3"
     },
     {
@@ -62,7 +62,7 @@
       "text": "あなたは朔先輩の向かい側に座り、勉強を始めた。 カリカリ.........カリカリ............",
       "character": "saku_studying.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "studying_bgm.mp3"
     },
     {
@@ -70,7 +70,7 @@
       "text": "キーンコーンカーンコーン",
       "character": "saku_studying.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "school_chime.mp3"
     },
     {
@@ -78,7 +78,7 @@
       "text": "うーん ......そろそろ教室行かないと、かな",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "school_morning_theme.mp3"
     },
     {
@@ -86,7 +86,7 @@
       "text": "だね",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "school_morning_theme.mp3"
     },
     {
@@ -94,7 +94,7 @@
       "text": "ガサガサ(荷物をまとめる音)",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "school_morning_theme.mp3"
     },
     {
@@ -102,7 +102,7 @@
       "text": "鍵と電気はやっておくから、先行っていいよ",
       "character": "saku_smile.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "gentle_theme.mp3"
     },
     {
@@ -110,7 +110,7 @@
       "text": "!! ありがとうございます！",
       "character": "saku_smile.png",
       "position": "center",
-      "background": "broadcast_room_morning.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "gentle_theme.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "〜放課後〜",
       "character": "",
       "position": "",
-      "background": "school_corridor_afternoon.jpg",
+      "background": "school_day.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -126,7 +126,7 @@
       "text": "おつかれさまです！",
       "character": "",
       "position": "",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -134,7 +134,7 @@
       "text": "おつかれー",
       "character": "club_member_1.png",
       "position": "left",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -142,7 +142,7 @@
       "text": "どわー、つかれた......... 7時間授業きついな.........",
       "character": "",
       "position": "",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -150,7 +150,7 @@
       "text": "うーん、今日は特に予定もなさそうだね。友達から連絡がくるまで、何かしようかな？",
       "character": "",
       "position": "",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "thinking_theme.mp3"
     },
     {
@@ -158,7 +158,7 @@
       "text": "あなたは動画の編集をすることにした。",
       "character": "",
       "position": "",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "thinking_theme.mp3"
     },
     {
@@ -166,7 +166,7 @@
       "text": "先輩！ パソコン使ってもいいですか？",
       "character": "club_member_1.png",
       "position": "left",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -174,7 +174,7 @@
       "text": "いいよぉ",
       "character": "club_member_1.png",
       "position": "left",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -182,7 +182,7 @@
       "text": "カタカタ............(作業音)",
       "character": "",
       "position": "",
-      "background": "computer_screen_view.jpg",
+      "background": "computer.jpg",
       "bgm": "editing_theme.mp3"
     },
     {
@@ -190,7 +190,7 @@
       "text": "うーん .. うまく動いてくれないや。一体どうしたら.........",
       "character": "",
       "position": "",
-      "background": "computer_screen_view.jpg",
+      "background": "computer.jpg",
       "bgm": "problem_theme.mp3"
     },
     {
@@ -198,7 +198,7 @@
       "text": "ガチャン(ドア) おつかれ~",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -206,7 +206,7 @@
       "text": "お疲れ様でーす",
       "character": "saku_normal.png",
       "position": "center",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     },
     {
@@ -214,7 +214,7 @@
       "text": "あっ... お疲れ様です",
       "character": "saku_smile.png",
       "position": "center",
-      "background": "broadcast_room_afternoon.jpg",
+      "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3"
     }
   ]
