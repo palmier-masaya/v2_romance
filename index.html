@@ -555,10 +555,7 @@
                     this.createParticles(document.body, 20); // 背景パーティクル
 
                     this.loadingScreen.classList.add('hidden');
-                } catch (error) {
-                    console.error('初期化エラー:', error);
-                    this.showError('ゲームファイルの読み込みに失敗しました。<br>assets/scenario.json を確認してください。');
-                }
+                } 
             }
 
             // ★★★ 機能追加: アセットのプリロード
