@@ -1,68 +1,221 @@
 {
+  "titleBGM": "title_theme.mp3",
   "scenes": [
     {
       "speaker": "ナレーター",
-      "text": "桜が舞い散る春の日、あなたは学校の屋上で一人の少女と出会った。",
-      "character": "saku.png",
-      "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "spring_theme.mp3"
+      "text": "早朝、あなたは放送室へ向かった。",
+      "character": "",
+      "position": "",
+      "background": "school_corridor_morning.jpg",
+      "bgm": "school_morning_theme.mp3"
     },
     {
-      "speaker": "サク",
-      "text": "あら、こんなところに誰かいるなんて思わなかった。",
-      "character": "saku.png",
-      "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "spring_theme.mp3"
+      "speaker": "主人公",
+      "text": "よし、学校着いた〜。放送室に行って自習でもしようかな？",
+      "character": "",
+      "position": "",
+      "background": "school_corridor_morning.jpg",
+      "bgm": "school_morning_theme.mp3"
     },
     {
-      "speaker": "サク",
-      "text": "私は桜子。あなたは？",
-      "character": "saku.png",
+      "speaker": "主人公",
+      "text": "(ドアノブを見て)あれ？もう開いてる",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room_door.jpg",
+      "bgm": "curiosity_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "ガチャ......失礼しまーす......って、あれ？ サク先輩？",
+      "character": "saku_sleepy.png",
       "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "spring_theme.mp3"
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "curiosity_theme.mp3"
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "ん......おはよう",
+      "character": "saku_sleepy.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "curiosity_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "おはようございます。先輩も勉強ですか？",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "calm_theme.mp3"
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "そう......だね。そんなところかな",
+      "character": "saku_vague_smile.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "calm_theme.mp3"
     },
     {
       "speaker": "ナレーター",
-      "text": "あなたは自分の名前を名乗った。",
-      "character": "saku.png",
+      "text": "あなたは朔先輩の向かい側に座り、勉強を始めた。 カリカリ.........カリカリ............",
+      "character": "saku_studying.png",
       "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "spring_theme.mp3"
-    },
-    {
-      "speaker": "サク",
-      "text": "素敵な名前ね。ここは私の特別な場所なの。",
-      "character": "saku.png",
-      "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "spring_theme.mp3"
-    },
-    {
-      "speaker": "サク",
-      "text": "でも、あなたとなら一緒にいても良いかも。",
-      "character": "saku.png",
-      "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "romantic_theme.mp3"
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "studying_bgm.mp3"
     },
     {
       "speaker": "ナレーター",
-      "text": "夕日が二人を優しく照らしていた。",
-      "character": "saku.png",
+      "text": "キーンコーンカーンコーン",
+      "character": "saku_studying.png",
       "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "romantic_theme.mp3"
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "school_chime.mp3"
     },
     {
-      "speaker": "サク",
-      "text": "また明日も、ここで会いましょう。",
-      "character": "saku.png",
+      "speaker": "主人公",
+      "text": "うーん ......そろそろ教室行かないと、かな",
+      "character": "saku_normal.png",
       "position": "center",
-      "background": "school_day.jpg",
-      "bgm": "romantic_theme.mp3"
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "school_morning_theme.mp3"
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "だね",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "school_morning_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "ガサガサ(荷物をまとめる音)",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "school_morning_theme.mp3"
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "鍵と電気はやっておくから、先行っていいよ",
+      "character": "saku_smile.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "gentle_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "!! ありがとうございます！",
+      "character": "saku_smile.png",
+      "position": "center",
+      "background": "broadcast_room_morning.jpg",
+      "bgm": "gentle_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "〜放課後〜",
+      "character": "",
+      "position": "",
+      "background": "school_corridor_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "おつかれさまです！",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "部員",
+      "text": "おつかれー",
+      "character": "club_member_1.png",
+      "position": "left",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "どわー、つかれた......... 7時間授業きついな.........",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "うーん、今日は特に予定もなさそうだね。友達から連絡がくるまで、何かしようかな？",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "thinking_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "あなたは動画の編集をすることにした。",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "thinking_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "先輩！ パソコン使ってもいいですか？",
+      "character": "club_member_1.png",
+      "position": "left",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "部員",
+      "text": "いいよぉ",
+      "character": "club_member_1.png",
+      "position": "left",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "カタカタ............(作業音)",
+      "character": "",
+      "position": "",
+      "background": "computer_screen_view.jpg",
+      "bgm": "editing_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "うーん .. うまく動いてくれないや。一体どうしたら.........",
+      "character": "",
+      "position": "",
+      "background": "computer_screen_view.jpg",
+      "bgm": "problem_theme.mp3"
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "ガチャン(ドア) おつかれ~",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "部員",
+      "text": "お疲れ様でーす",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
+    },
+    {
+      "speaker": "主人公",
+      "text": "あっ... お疲れ様です",
+      "character": "saku_smile.png",
+      "position": "center",
+      "background": "broadcast_room_afternoon.jpg",
+      "bgm": "after_school_theme.mp3"
     }
   ]
 }
