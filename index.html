@@ -469,13 +469,6 @@
     </style>
 </head>
 <body>
-    <div id="loading-screen">
-        <div>
-            ゲームを読み込み中...
-            <div class="loading-spinner"></div>
-        </div>
-    </div>
-
     <div id="start-screen">
         <div class="title-container">
             <h1 class="game-title">恋愛シミュレーション</h1>
@@ -522,7 +515,6 @@
                 this.isTransitioning = false; // シーン遷移中フラグ
 
                 // DOM要素の取得
-                this.loadingScreen = document.getElementById('loading-screen');
                 this.gameContainer = document.getElementById('game-container');
                 this.characterImg = document.getElementById('character');
                 this.speakerName = document.getElementById('speaker-name');
