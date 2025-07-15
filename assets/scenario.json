@@ -7,7 +7,8 @@
       "character": "",
       "position": "",
       "background": "school_day.jpg",
-      "bgm": "school_morning_theme.mp3"
+      "bgm": "school_morning_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -15,7 +16,8 @@
       "character": "",
       "position": "",
       "background": "school_day.jpg",
-      "bgm": "school_morning_theme.mp3"
+      "bgm": "school_morning_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -23,7 +25,8 @@
       "character": "",
       "position": "",
       "background": "broadcast_room_door.jpg",
-      "bgm": "curiosity_theme.mp3"
+      "bgm": "curiosity_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -31,7 +34,8 @@
       "character": "saku_sleepy.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "curiosity_theme.mp3"
+      "bgm": "curiosity_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "朔先輩",
@@ -39,7 +43,8 @@
       "character": "saku_sleepy.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "curiosity_theme.mp3"
+      "bgm": "curiosity_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -47,7 +52,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "calm_theme.mp3"
+      "bgm": "calm_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "朔先輩",
@@ -55,7 +61,8 @@
       "character": "saku_vague_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "calm_theme.mp3"
+      "bgm": "calm_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -63,7 +70,8 @@
       "character": "saku_studying.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "studying_bgm.mp3"
+      "bgm": "studying_bgm.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -71,7 +79,8 @@
       "character": "saku_studying.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_chime.mp3"
+      "bgm": "school_chime.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -79,7 +88,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3"
+      "bgm": "school_morning_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "朔先輩",
@@ -87,7 +97,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3"
+      "bgm": "school_morning_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -95,7 +106,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3"
+      "bgm": "school_morning_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "朔先輩",
@@ -103,7 +115,8 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "gentle_theme.mp3"
+      "bgm": "gentle_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -111,7 +124,8 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "gentle_theme.mp3"
+      "bgm": "gentle_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -119,7 +133,8 @@
       "character": "",
       "position": "",
       "background": "school_day.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -127,7 +142,8 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "部員",
@@ -135,7 +151,8 @@
       "character": "club_member_1.png",
       "position": "left",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -143,7 +160,8 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -151,7 +169,8 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "thinking_theme.mp3"
+      "bgm": "thinking_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -159,7 +178,8 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "thinking_theme.mp3"
+      "bgm": "thinking_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -167,7 +187,8 @@
       "character": "club_member_1.png",
       "position": "left",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "部員",
@@ -175,7 +196,8 @@
       "character": "club_member_1.png",
       "position": "left",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "ナレーター",
@@ -183,7 +205,8 @@
       "character": "",
       "position": "",
       "background": "computer.jpg",
-      "bgm": "editing_theme.mp3"
+      "bgm": "editing_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -191,7 +214,8 @@
       "character": "",
       "position": "",
       "background": "computer.jpg",
-      "bgm": "problem_theme.mp3"
+      "bgm": "problem_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "朔先輩",
@@ -199,7 +223,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "部員",
@@ -207,7 +232,8 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     },
     {
       "speaker": "主人公",
@@ -215,7 +241,8 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3"
+      "bgm": "after_school_theme.mp3",
+      "se": ""
     }
   ]
 }
