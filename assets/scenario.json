@@ -67,8 +67,8 @@
     {
       "speaker": "ナレーター",
       "text": "あなたは朔先輩の向かい側に座り、勉強を始めた。 カリカリ.........カリカリ............",
-      "character": "saku_studying.png",
-      "position": "center",
+      "character": "",
+      "position": "",
       "background": "broadcast_room.jpg",
       "bgm": "studying_bgm.mp3",
       "se": ""
@@ -76,8 +76,8 @@
     {
       "speaker": "ナレーター",
       "text": "カリカリ.........カリカリ............",
-      "character": "saku_studying.png",
-      "position": "center",
+      "character": "",
+      "position": "",
       "background": "broadcast_room.jpg",
       "bgm": "studying_bgm.mp3",
       "se": ""
@@ -85,8 +85,8 @@
     {
       "speaker": "ナレーター",
       "text": "キーンコーンカーンコーン",
-      "character": "saku_studying.png",
-      "position": "center",
+      "character": "",
+      "position": "",
       "background": "broadcast_room.jpg",
       "bgm": "school_chime.mp3",
       "se": ""
@@ -157,7 +157,7 @@
     {
       "speaker": "部員",
       "text": "おつかれー",
-      "character": "club_member_1.png",
+      "character": "gantz.png",
       "position": "left",
       "background": "broadcast_room.jpg",
       "bgm": "after_school_theme.mp3",
