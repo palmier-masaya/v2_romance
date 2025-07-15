@@ -75,6 +75,15 @@
     },
     {
       "speaker": "ナレーター",
+      "text": "カリカリ.........カリカリ............",
+      "character": "saku_studying.png",
+      "position": "center",
+      "background": "broadcast_room.jpg",
+      "bgm": "studying_bgm.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "ナレーター",
       "text": "キーンコーンカーンコーン",
       "character": "saku_studying.png",
       "position": "center",
@@ -165,7 +174,7 @@
     },
     {
       "speaker": "主人公",
-      "text": "うーん、今日は特に予定もなさそうだね。友達から連絡がくるまで、何かしようかな？",
+      "text": "うーん、今日は特に予定もなさそうだね。友達から連絡がくるまで、パソコンの中の映像でも漁ってみようかな",
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
@@ -174,34 +183,7 @@
     },
     {
       "speaker": "ナレーター",
-      "text": "あなたは動画の編集をすることにした。",
-      "character": "",
-      "position": "",
-      "background": "broadcast_room.jpg",
-      "bgm": "thinking_theme.mp3",
-      "se": ""
-    },
-    {
-      "speaker": "主人公",
-      "text": "先輩！ パソコン使ってもいいですか？",
-      "character": "club_member_1.png",
-      "position": "left",
-      "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3",
-      "se": ""
-    },
-    {
-      "speaker": "部員",
-      "text": "いいよぉ",
-      "character": "club_member_1.png",
-      "position": "left",
-      "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3",
-      "se": ""
-    },
-    {
-      "speaker": "ナレーター",
-      "text": "カタカタ............(作業音)",
+      "text": "あなたは部室のパソコンで、過去の録画素材を探し始めた。",
       "character": "",
       "position": "",
       "background": "computer.jpg",
@@ -209,39 +191,84 @@
       "se": ""
     },
     {
+      "speaker": "朔先輩",
+      "text": "……ごめん、軽音部にちょっと顔出してくるね。兼部してるからさ",
+      "character": "saku_normal.png",
+      "position": "center",
+      "background": "broadcast_room.jpg",
+      "bgm": "after_school_theme.mp3",
+      "se": ""
+    },
+    {
       "speaker": "主人公",
-      "text": "うーん .. うまく動いてくれないや。一体どうしたら.........",
+      "text": "あ、はい！いってらっしゃい！",
+      "character": "",
+      "position": "",
+      "background": "broadcast_room.jpg",
+      "bgm": "after_school_theme.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "あなたは一人、黙々と映像を確認し続けた。",
       "character": "",
       "position": "",
       "background": "computer.jpg",
-      "bgm": "problem_theme.mp3",
+      "bgm": "editing_theme.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "〜帰り道〜",
+      "character": "",
+      "position": "",
+      "background": "school_gate_evening.jpg",
+      "bgm": "evening_theme.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "主人公",
+      "text": "……あれ？ あそこにいるのって朔先輩？",
+      "character": "",
+      "position": "",
+      "background": "school_gate_evening.jpg",
+      "bgm": "evening_theme.mp3",
       "se": ""
     },
     {
       "speaker": "朔先輩",
-      "text": "ガチャン(ドア) おつかれ~",
-      "character": "saku_normal.png",
+      "text": "あ、帰るところ？",
+      "character": "saku_smile.png",
       "position": "center",
-      "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3",
-      "se": ""
-    },
-    {
-      "speaker": "部員",
-      "text": "お疲れ様でーす",
-      "character": "saku_normal.png",
-      "position": "center",
-      "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3",
+      "background": "school_gate_evening.jpg",
+      "bgm": "evening_theme.mp3",
       "se": ""
     },
     {
       "speaker": "主人公",
-      "text": "あっ... お疲れ様です",
+      "text": "はい。……先輩も駅までですか？",
+      "character": "",
+      "position": "",
+      "background": "school_gate_evening.jpg",
+      "bgm": "evening_theme.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "朔先輩",
+      "text": "うん、一緒に行こっか",
       "character": "saku_smile.png",
       "position": "center",
-      "background": "broadcast_room.jpg",
-      "bgm": "after_school_theme.mp3",
+      "background": "school_gate_evening.jpg",
+      "bgm": "evening_theme.mp3",
+      "se": ""
+    },
+    {
+      "speaker": "ナレーター",
+      "text": "駅までの帰り道、あなたと朔先輩は並んで歩きながら、なんでもない話をした――",
+      "character": "",
+      "position": "",
+      "background": "path_to_station.jpg",
+      "bgm": "gentle_theme.mp3",
       "se": ""
     }
   ]
