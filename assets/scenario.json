@@ -124,7 +124,7 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": calm_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
