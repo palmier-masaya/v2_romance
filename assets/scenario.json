@@ -25,7 +25,7 @@
       "character": "",
       "position": "",
       "background": "broadcast_room_door.jpg",
-      "bgm": "curiosity_theme.mp3",
+      "bgm": "school_morning_theme.mp3",
       "se": ""
     },
     {
@@ -34,7 +34,7 @@
       "character": "saku_sleepy.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "curiosity_theme.mp3",
+      "bgm": "school_morning_theme.mp3",
       "se": ""
     },
     {
@@ -43,7 +43,7 @@
       "character": "saku_sleepy.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "curiosity_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -70,7 +70,7 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "studying_bgm.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -79,7 +79,7 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "studying_bgm.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -88,7 +88,7 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "school_chime.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -97,7 +97,7 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -106,7 +106,7 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -115,7 +115,7 @@
       "character": "saku_normal.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "school_morning_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -124,7 +124,7 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "gentle_theme.mp3",
+      "bgm": calm_theme.mp3",
       "se": ""
     },
     {
@@ -133,7 +133,7 @@
       "character": "saku_smile.png",
       "position": "center",
       "background": "broadcast_room.jpg",
-      "bgm": "gentle_theme.mp3",
+      "bgm": "calm_theme.mp3",
       "se": ""
     },
     {
@@ -178,7 +178,7 @@
       "character": "",
       "position": "",
       "background": "broadcast_room.jpg",
-      "bgm": "thinking_theme.mp3",
+      "bgm": "afte_school_theme.mp3",
       "se": ""
     },
     {
@@ -187,7 +187,7 @@
       "character": "",
       "position": "",
       "background": "computer.jpg",
-      "bgm": "editing_theme.mp3",
+      "bgm": "after_school_theme.mp3",
       "se": ""
     },
     {
@@ -214,7 +214,7 @@
       "character": "",
       "position": "",
       "background": "computer.jpg",
-      "bgm": "editing_theme.mp3",
+      "bgm": "after_school_theme.mp3",
       "se": ""
     },
     {
@@ -268,7 +268,7 @@
       "character": "",
       "position": "",
       "background": "path_to_station.jpg",
-      "bgm": "gentle_theme.mp3",
+      "bgm": "evening_theme.mp3",
       "se": ""
     }
   ]
